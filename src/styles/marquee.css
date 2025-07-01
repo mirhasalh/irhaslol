@@ -1,0 +1,9 @@
+#marquee-section {
+    z-index: 20;
+}
+
+#marquee-section>.marquee-container {
+    position: relative;
+    z-index: 5;
+    transform: translateY(-10em);
+}

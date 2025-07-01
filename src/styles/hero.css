@@ -1,0 +1,55 @@
+.hero-overlay-gradient-primary,
+.hero-overlay-gradient-secondary,
+.hero-overlay-gradient-tertiary {
+    pointer-events: none;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    max-height: 768px;
+    max-width: 768px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-overlay-gradient-primary {
+    background: radial-gradient(circle at 40% 35%, #00d390 -200%, transparent 35%), radial-gradient(circle at 60% 40%, #00bafe -200%, transparent 30%);
+}
+
+.hero-overlay-gradient-secondary {
+    background: radial-gradient(at 40% 40%, #422ad5 -200%, transparent 30%), radial-gradient(at 60% 60%, #f43098 -200%, transparent 30%);
+}
+
+.hero-overlay-gradient-tertiary {
+    background: radial-gradient(circle at 30% 60%, #00bafe -200%, transparent 30%), radial-gradient(circle at 70% 50%, #fcb700 -200%, transparent 30%);
+}
+
+.hero-pattern-primary,
+.hero-pattern-secondary,
+.hero-pattern-neutral-content {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 100px 100px;
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+.hero-pattern-primary {
+    background-image: url("https://irhas.lol/pattern-primary.svg");
+}
+
+.hero-pattern-secondary {
+    background-image: url("https://irhas.lol/pattern-secondary.svg");
+}
+
+.hero-pattern-neutral-content {
+    background-image: url("https://irhas.lol/pattern-neutral-content.svg");
+}

@@ -1,0 +1,15 @@
+@import url("./styles/variables.css");
+@import url("./styles/animations.css");
+@import url("./styles/article.css");
+@import url("./styles/base.css");
+@import url("./styles/blockquote.css");
+@import url("./styles/code.css");
+@import url("./styles/fonts.css");
+@import url("./styles/hero.css");
+@import url("./styles/img.css");
+@import url("./styles/list.css");
+@import url("./styles/marquee.css");
+@import url("./styles/post.css");
+@import url("./styles/pre.css");
+@import 'tailwindcss';
+@plugin "daisyui";

@@ -1,0 +1,139 @@
+@import url("variables.css");
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-wave {
+    display: inline-block;
+    animation: wave-animation 2s forwards;
+    animation-delay: 1s;
+    transform-origin: 70% 70%;
+}
+
+@keyframes fade-fly-blur {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes fade-blur {
+    0% {
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.reveal-fade-fly-blur {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+    animation: fade-fly-blur 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.reveal-blur {
+    opacity: 0;
+    filter: blur(8px);
+    animation: fade-blur 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.animation-delay-250 {
+    animation-delay: .25s;
+}
+
+.animation-delay-500 {
+    animation-delay: .5s;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+@keyframes curtain-left {
+    to {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
+@keyframes curtain-right {
+    to {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+
+.reveal-curtain::after,
+.reveal-curtain::before {
+    content: '';
+    filter: blur(8px);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    background-color: rgba(var(--bg-base-200), 1);
+}
+
+.reveal-curtain::after {
+    left: 0;
+    clip-path: polygon(0 0, calc(100% - 100px) 0, calc(100% - 0px) 100%, 0 100%);
+    animation: curtain-left 1s cubic-bezier(0.7, 0, 1, 1) forwards;
+    animation-delay: .5s;
+}
+
+.reveal-curtain::before {
+    right: 0;
+    clip-path: polygon(100px 0, 100% 0, 100% 100%, 0 100%);
+    animation: curtain-right 1s cubic-bezier(0.7, 0, 1, 1) forwards;
+    animation-delay: .5s;
+}
+
+@media screen and (min-width: 768px) {
+
+    .reveal-curtain::after,
+    .reveal-curtain::before {
+        width: 70%;
+    }
+}

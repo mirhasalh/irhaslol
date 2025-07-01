@@ -1,0 +1,10 @@
+@import url("variables.css");
+
+.blockquote {
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 4px;
+    border-left: 4px solid rgba(var(--neutral-content), 1);
+    padding: 0.5em 1em;
+    background-color: rgba(var(--bg-base-300), 1);
+    margin: 1em 0;
+}
