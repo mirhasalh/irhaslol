@@ -22,6 +22,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Tag: {data.slug}</title>
+</svelte:head>
+
 <section class="mx-auto min-h-screen max-w-4xl">
   <form class="m-4" onsubmit={() => goFind(toFind)}>
     <label class="input mx-auto" for="search">
@@ -36,6 +40,8 @@
       {/each}
     </ul>
   {:else}
-    <p>Posts? Nah</p>
+    <ul class="px-4">
+      <li>Posts? Nah</li>
+    </ul>
   {/if}
 </section>
