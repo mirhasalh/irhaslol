@@ -11,6 +11,10 @@
     ]
 </script>
 
+<svelte:head>
+  <title>Animations</title>
+</svelte:head>
+
 <div class="hero min-h-screen">
   <div class="hero-pattern-secondary"></div>
   <div class="hero-overlay-gradient-secondary reveal-blur animation-delay-500"></div>

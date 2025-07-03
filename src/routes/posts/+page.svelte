@@ -18,6 +18,10 @@
   })
 </script>
 
+<svelte:head>
+  <title>Posts</title>
+</svelte:head>
+
 <section class="mx-auto min-h-screen max-w-4xl">
   <h2 class="merriweather mx-4 mt-4 text-4xl font-bold">
     {l('recentPost')}
