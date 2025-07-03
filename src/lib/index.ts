@@ -170,7 +170,7 @@ export const socials = [
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/mirhasalh/irhas'
+    url: 'https://github.com/mirhasalh/irhaslol'
   },
   {
     name: 'Instagram',
