@@ -17,7 +17,7 @@
   }
 </script>
 
-<footer class="footer sm:footer-horizontal bg-base-300 text-base-content p-10 mt-10">
+<footer class="footer sm:footer-horizontal bg-base-300 text-base-content mt-10 p-10">
   <nav>
     <h3 class="footer-title">{l('sites')}</h3>
     {#each sites as site (site.url)}

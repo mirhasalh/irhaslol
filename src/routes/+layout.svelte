@@ -43,7 +43,7 @@
   {#snippet leading()}
     <a href="/" class="flex items-center gap-2" title="Home">
       <BrandLogo width={40} height={40} />
-      <p class="merriweather leading-4 text-sm hidden sm:block">Irhas'<br />dev blog</p>
+      <p class="merriweather hidden text-sm leading-4 sm:block">Irhas'<br />dev blog</p>
     </a>
   {/snippet}
   {#snippet trailing()}

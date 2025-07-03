@@ -14,25 +14,25 @@
 <div class="hero min-h-screen">
   <div class="hero-pattern-secondary"></div>
   <div class="hero-overlay-gradient-secondary reveal-blur animation-delay-500"></div>
-  <div class="hero-content text-center relative z-10">
+  <div class="hero-content relative z-10 text-center">
     <div class="max-w-3xl">
-      <h1 id="animations" class="text-5xl font-bold merriweather">
+      <h1 id="animations" class="merriweather text-5xl font-bold">
         {l('animations')}
       </h1>
-      <p class="py-6 hidden md:block">
+      <p class="hidden py-6 md:block">
         {l('riveIntro.start')}
         <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
         — {l('riveIntro.mid')}
         <br />
         {l('riveIntro.end')}
       </p>
-      <p class="py-6 text-sm block md:hidden">
+      <p class="block py-6 text-sm md:hidden">
         {l('riveIntro.start')}
         <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
         — {l('riveIntro.mid')}
         {l('riveIntro.end')}
       </p>
-      <ul class="flex flex-wrap justify-center items-center gap-2">
+      <ul class="flex flex-wrap items-center justify-center gap-2">
         {#each avatars as avatar, i (avatar.id)}
           <li>
             <div class="card bg-base-100 shadow-sm">

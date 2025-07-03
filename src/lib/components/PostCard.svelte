@@ -9,9 +9,9 @@
     <img src={`${website}/${post.slug}.png`} alt={post.title} width="100%" />
   </figure>
   <div class="card-body">
-    <span class="uppercase text-base-content/50"><strong>{post.category}</strong></span>
+    <span class="text-base-content/50 uppercase"><strong>{post.category}</strong></span>
     <h2 id={post.slug} class="post-card-title merriweather card-title">{post.title}</h2>
     <p><span class="post-card-excerpt">{post.excerpt}</span></p>
-    <small class="jetbrains-mono font-medium text-base-content/70">{formatDate(post.publishedAt)}</small>
+    <small class="jetbrains-mono text-base-content/70 font-medium">{formatDate(post.publishedAt)}</small>
   </div>
 </a>
