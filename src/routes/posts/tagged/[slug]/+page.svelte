@@ -22,7 +22,7 @@
   }
 </script>
 
-<section class="max-w-4xl mx-auto min-h-screen">
+<section class="mx-auto min-h-screen max-w-4xl">
   <form class="m-4" onsubmit={() => goFind(toFind)}>
     <label class="input mx-auto" for="search">
       <span class="label">Search</span>
@@ -30,7 +30,7 @@
     </label>
   </form>
   {#if posts.length}
-    <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
+    <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
       {#each posts as post (post.slug)}
         <li><PostCard {post} /></li>
       {/each}

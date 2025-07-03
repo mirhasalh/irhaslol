@@ -18,17 +18,17 @@
   })
 </script>
 
-<section class="max-w-4xl mx-auto min-h-screen">
-  <h2 class="merriweather text-4xl mx-4 mt-4 font-bold">
+<section class="mx-auto min-h-screen max-w-4xl">
+  <h2 class="merriweather mx-4 mt-4 text-4xl font-bold">
     {l('recentPost')}
   </h2>
-  <form class="filter m-4">
+  <form class="m-4 filter">
     <input class="btn btn-square" type="reset" value="×" />
     {#each categories as c}
       <input class="btn" type="radio" bind:group={selectedCategory} name="frameworks" aria-label={c} value={c} />
     {/each}
   </form>
-  <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
+  <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
     {#each postsToShow as post (post.slug)}
       <li animate:flip in:fade out:fly={{ x: 100 }}>
         <PostCard {post} />

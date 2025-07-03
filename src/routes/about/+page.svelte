@@ -10,14 +10,14 @@
 <div class="hero min-h-screen">
   <div class="hero-pattern-primary"></div>
   <div class="hero-overlay-gradient-tertiary reveal-blur animation-delay-500"></div>
-  <div class="hero-content flex-col lg:flex-row-reverse max-w-3xl relative z-10">
+  <div class="hero-content relative z-10 max-w-3xl flex-col lg:flex-row-reverse">
     <Card3D />
     <div>
       <h1 id="greetings" class="merriweather text-5xl font-bold">
         {l('greetings2')}
       </h1>
       <p class="py-6">{l('bio')}</p>
-      <h2 id="github-accounts" class="font-bold merriweather text-4xl">
+      <h2 id="github-accounts" class="merriweather text-4xl font-bold">
         {l('gitHubAccounts')}
       </h2>
       <p class="py-4">{l('gitHubAccountsSubtitle')}</p>
@@ -34,8 +34,8 @@
   </div>
 </div>
 
-<section class="max-w-4xl mx-auto">
-  <div class="flex-wrap justify-between items-center m-4 md:flex">
+<section class="mx-auto max-w-4xl">
+  <div class="m-4 flex-wrap items-center justify-between md:flex">
     <h2 id="work-history" class="merriweather text-4xl font-bold">
       {l('workHistory')}
     </h2>
@@ -57,7 +57,7 @@
         </div>
         <div class={textStyle}>
           <time class="jetbrains-mono italic">{w.year}</time>
-          <div class="text-lg font-black merriweather">{w.title}</div>
+          <div class="merriweather text-lg font-black">{w.title}</div>
           <img class:hidden={!showImage} src={w.imgUrl} alt={w.title} />
           <small>{w.desc}</small>
           <br />

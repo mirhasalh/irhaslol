@@ -40,10 +40,10 @@
 <div class="hero min-h-screen">
   <div class="hero-overlay-gradient-primary reveal-blur animation-delay-500"></div>
   <div class="hero-pattern-neutral-content"></div>
-  <div class="hero-content text-center relative z-10">
+  <div class="hero-content relative z-10 text-center">
     <div class="max-w-md">
       <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" />
-      <ul class="flex gap-2 justify-center">
+      <ul class="flex justify-center gap-2">
         {#each urls.filter((v) => v.show) as url (url.id)}
           <li>
             {#if url.code === 'internal-testing'}
@@ -71,19 +71,19 @@
   </div>
 </div>
 
-<section class="max-w-4xl mx-auto">
-  <h2 id="feature-graphic" class="merriweather text-4xl m-4 font-bold">Feature graphic</h2>
+<section class="mx-auto max-w-4xl">
+  <h2 id="feature-graphic" class="merriweather m-4 text-4xl font-bold">Feature graphic</h2>
   <figure class="post-card-graphic overflow-clip lg:rounded-lg">
     <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
     <figcaption class="hidden">{data.app!.shortDescription}</figcaption>
   </figure>
 </section>
-<section class="max-w-4xl mx-auto mt-10">
-  <h2 id="description" class="merriweather text-4xl m-4 font-bold">Description</h2>
+<section class="mx-auto mt-10 max-w-4xl">
+  <h2 id="description" class="merriweather m-4 text-4xl font-bold">Description</h2>
   <p class="px-4">{data.app!.description}</p>
 </section>
-<section class="max-w-4xl mx-auto mt-10">
-  <h2 id="privacy" class="merriweather text-4xl m-4 font-bold">Privacy policy</h2>
+<section class="mx-auto mt-10 max-w-4xl">
+  <h2 id="privacy" class="merriweather m-4 text-4xl font-bold">Privacy policy</h2>
   <p class="px-4">Effective date: {data.app!.privacy.effectiveDate}</p>
   <ol class="list-mb-4 list mt-4 px-4">
     {#each data.app!.privacy.declarations as d, i (d.id)}
