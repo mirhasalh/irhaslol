@@ -18,7 +18,7 @@ export default {
       home: 'Home',
       posts: 'Posts'
     },
-    recentPost: 'Recent post',
+    recentPosts: 'Recent posts',
     riveIntro: {
       end: 'Perfect for keeping things fast without losing quality.',
       mid: 'super lightweight and the file size stays tiny.',

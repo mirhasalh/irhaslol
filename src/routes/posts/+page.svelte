@@ -24,7 +24,7 @@
 
 <section class="mx-auto min-h-screen max-w-4xl">
   <h2 class="merriweather mx-4 mt-4 text-4xl font-bold">
-    {l('recentPost')}
+    {l('recentPosts')}
   </h2>
   <form class="m-4 filter">
     <input class="btn btn-square" type="reset" value="×" />
