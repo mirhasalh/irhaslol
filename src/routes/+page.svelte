@@ -88,7 +88,7 @@
 
 <section class="mx-auto max-w-4xl">
   <h2 id="recent-posts" class="merriweather m-4 text-4xl font-bold">
-    {l('recentPost')}
+    {l('recentPosts')}
   </h2>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
     {#each posts as post (post.slug)}
