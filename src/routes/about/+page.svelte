@@ -76,3 +76,11 @@
     {/each}
   </ul>
 </section>
+
+<section class="hero">
+  <div class="hero-content">
+    <a class="btn btn-neutral" href="https://irhas.lol/Resume_20250124-081909.pdf" target="_parent">
+      <span>Resume</span>
+    </a>
+  </div>
+</section>
