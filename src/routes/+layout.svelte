@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css'
+  import favicon from '$lib/assets/favicon.svg'
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
   import { onNavigate } from '$app/navigation'
@@ -38,6 +39,10 @@
 
   onMount(() => pageState.setBodyBackgroundColor())
 </script>
+
+<svelte:head>
+  <link rel="icon" href={favicon} />
+</svelte:head>
 
 <AppBar>
   {#snippet leading()}
