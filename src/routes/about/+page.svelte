@@ -65,7 +65,7 @@
           <img class:hidden={!showImage} src={w.imgUrl} alt={w.title} />
           <small>{w.desc}</small>
           <br />
-          <a class="btn btn-sm mt-2" class:hidden={!showImage} href={w.urls[0]}>
+          <a class="btn btn-sm mt-2" class:hidden={!showImage} href={w.urls[0]} target="_blank">
             <span class="text-sm">{l('visit')}</span>
           </a>
         </div>
