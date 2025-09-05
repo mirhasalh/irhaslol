@@ -1,8 +1,13 @@
 <script lang="ts">
-  import { gitHubAccounts, recentWork } from '$lib'
+  import type { PageData } from './$types'
+  import { website, gitHubAccounts } from '$lib'
   import { l } from '$lib/shared.svelte'
   import Tick from '$icons/Tick.svelte'
   import Card3D from '$components/Card3D.svelte'
+
+  let { data }: { data: PageData } = $props()
+
+  const works = data.works.reverse()
 
   let showImage = $state(false)
 </script>
@@ -44,7 +49,7 @@
       {l('workHistory')}
     </h2>
     <fieldset class="fieldset p-4">
-      <legend class="fieldset-legend hidden">Login options</legend>
+      <legend class="fieldset-legend hidden">View options</legend>
       <label class="label">
         {l('showImage')}
         <input type="checkbox" bind:checked={showImage} class="toggle" />
@@ -52,7 +57,7 @@
     </fieldset>
   </div>
   <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical px-4">
-    {#each recentWork as w, i (w.id)}
+    {#each works as work, i (work._id)}
       {@const isEven = i % 2 == 0}
       {@const textStyle = isEven ? 'timeline-start mb-10 md:text-end' : 'timeline-end md:mb-10'}
       <li>
@@ -60,16 +65,16 @@
           <Tick />
         </div>
         <div class={textStyle}>
-          <time class="jetbrains-mono italic">{w.year}</time>
-          <div class="merriweather text-lg font-black">{w.title}</div>
-          <img class:hidden={!showImage} src={w.imgUrl} alt={w.title} />
-          <small>{w.desc}</small>
+          <time class="jetbrains-mono italic">{work.year}</time>
+          <div class="merriweather text-lg font-black">{work.title}</div>
+          <img class:hidden={!showImage} src={`${website}/${work.imgFileName}`} alt={work.title} />
+          <small>{work.description}</small>
           <br />
-          <a class="btn btn-sm mt-2" class:hidden={!showImage} href={w.urls[0]} target="_blank">
+          <a class="btn btn-sm mt-2" class:hidden={!showImage} href={work.urls[0]} target="_blank">
             <span class="text-sm">{l('visit')}</span>
           </a>
         </div>
-        {#if i !== recentWork.length - 1}
+        {#if i !== works.length - 1}
           <hr />
         {/if}
       </li>

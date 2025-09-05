@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
-  import { apps, techStacks } from '$lib'
+  import { website, techStacks } from '$lib'
   import { l } from '$lib/shared.svelte'
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
@@ -22,7 +22,10 @@
   let { data }: { data: LayoutData } = $props()
 
   const obj: any = data as any,
-    posts: App.Post[] = obj.posts as App.Post[]
+    posts: App.Post[] = obj.posts as App.Post[],
+    mobileApps: App.MobileApp[] = obj.apps as App.MobileApp[]
+  
+  console.log(mobileApps)
 </script>
 
 <MetaHome />
@@ -107,16 +110,16 @@
     {l('apps')}
   </h2>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-    {#each apps as app (app.id)}
-      {@const url = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
+    {#each mobileApps as app (app._id)}
+      {@const url = `/app/${app.slug}`}
       <li>
         <a class="post-card card bg-base-100 shadow-sm hover:shadow-xl" href={url}>
           <figure class="post-card-graphic">
-            <img src={app.featureGraphic} alt={app.name} width="100%" />
+            <img src={`${website}/${app.featureGraphic}`} alt={app.title} width="100%" />
           </figure>
           <div class="card-body">
             <span class="jetbrains-mono text-base-content/50 uppercase"><strong>{app.year}</strong></span>
-            <h2 class="merriweather card-title">{app.name}</h2>
+            <h2 class="merriweather card-title">{app.title}</h2>
             <p><span>{app.description}</span></p>
           </div>
         </a>
