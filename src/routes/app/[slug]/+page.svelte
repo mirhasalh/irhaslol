@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { website } from '$lib'
+  import { website, formatDate } from '$lib'
   import type { PageData } from './$types'
   import GooglePlay from '$icons/download/GooglePlay.svelte'
   import AppStore from '$icons/download/AppStore.svelte'
@@ -8,7 +8,7 @@
 
   let { data }: { data: PageData } = $props()
 
-  const urls = data.app!.urls as App.AppUrl[]
+  const mobileApp = data.app as App.MobileApp
 
   const requestInternalTesting = () => {
     const email = prompt('Enter your email to request access to the closed testing:')
@@ -24,16 +24,16 @@
 </script>
 
 <svelte:head>
-  <title>{`${data.app!.name} (${data.app!.year})`}</title>
-  <meta name="description" content={data.app!.shortDescription} />
-  <meta property="og:title" content={`${data.app!.name} (${data.app!.year})`} />
-  <meta property="og:description" content={data.app!.description} />
-  <meta property="og:image" content={data.app!.featureGraphic} />
+  <title>{`${mobileApp.title} (${mobileApp.year})`}</title>
+  <meta name="description" content={mobileApp.shortDescription} />
+  <meta property="og:title" content={`${mobileApp.title} (${mobileApp.year})`} />
+  <meta property="og:description" content={mobileApp.description} />
+  <meta property="og:image" content={`${website}/${mobileApp.featureGraphic}`} />
   <meta property="og:url" content={`${website}/app/${data.slug}`} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={data.app!.name} />
-  <meta name="twitter:description" content={data.app!.description} />
-  <meta name="twitter:image" content={data.app!.featureGraphic} />
+  <meta name="twitter:title" content={mobileApp.title} />
+  <meta name="twitter:description" content={mobileApp.description} />
+  <meta name="twitter:image" content={`${website}/${mobileApp.featureGraphic}`} />
   <link rel="canonical" href={`${website}/app/${data.slug}`} />
 </svelte:head>
 
@@ -42,9 +42,9 @@
   <div class="hero-pattern-neutral-content"></div>
   <div class="hero-content relative z-10 text-center">
     <div class="max-w-md">
-      <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" />
+      <img class="app-icon mx-auto mb-4" src={`${website}/${mobileApp.icon}`} alt={mobileApp.title} width="126" />
       <ul class="flex justify-center gap-2">
-        {#each urls.filter((v) => v.show) as url (url.id)}
+        {#each mobileApp.urls.filter((v) => v.show) as url}
           <li>
             {#if url.code === 'internal-testing'}
               <button class="btn" onclick={() => requestInternalTesting()}>
@@ -64,7 +64,7 @@
           </li>
         {/each}
       </ul>
-      {#if !data.app!.production}
+      {#if mobileApp.production}
         <p class="mt-2"><small>{note}</small></p>
       {/if}
     </div>
@@ -74,24 +74,24 @@
 <section class="mx-auto max-w-4xl">
   <h2 id="feature-graphic" class="merriweather m-4 text-4xl font-bold">Feature graphic</h2>
   <figure class="post-card-graphic overflow-clip lg:rounded-lg">
-    <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
-    <figcaption class="hidden">{data.app!.shortDescription}</figcaption>
+    <img src={`${website}/${mobileApp.featureGraphic}`} alt={mobileApp.title} width="100%" />
+    <figcaption class="hidden">{mobileApp.shortDescription}</figcaption>
   </figure>
 </section>
 <section class="mx-auto mt-10 max-w-4xl">
   <h2 id="description" class="merriweather m-4 text-4xl font-bold">Description</h2>
-  <p class="px-4">{data.app!.description}</p>
+  <p class="px-4">{mobileApp.description}</p>
 </section>
 <section class="mx-auto mt-10 max-w-4xl">
   <h2 id="privacy" class="merriweather m-4 text-4xl font-bold">Privacy policy</h2>
-  <p class="px-4">Effective date: {data.app!.privacy.effectiveDate}</p>
+  <p class="px-4">Effective date: {formatDate(mobileApp.effectiveDateOfPrivacy)}</p>
   <ol class="list-mb-4 list mt-4 px-4">
-    {#each data.app!.privacy.declarations as d, i (d.id)}
+    {#each mobileApp.privacyDeclarations as declaration, i}
       <li>
         <p>
-          <strong>{i + 1}. {d.title}</strong>
+          <strong>{i + 1}. {declaration.title}</strong>
           <br />
-          {d.subtitle}
+          {declaration.text}
         </p>
       </li>
     {/each}

@@ -19,12 +19,41 @@ declare global {
 			readingTime: number
 		}
 
-		interface AppUrl {
-			id: number
+		interface PrivacyDeclaration {
+			title: string
+			text: string
+		}
+
+		interface MobileAppUrl {
 			title: string
 			code: string
-			url: string
 			show: boolean
+			url: string
+		}
+
+		interface MobileApp {
+			_id: string
+			description: string
+			effectiveDateOfPrivacy: string
+			featureGraphic: string
+			icon: string
+			privacyDeclarations: PrivacyDeclaration[]
+			production: boolean
+			shortDescription: string
+			slug: string
+			title: string
+			urls: MobileAppUrl[]
+			year: number
+		}
+
+		interface Work {
+			_id: string
+			_createdAt: string
+			title: string
+			description: string
+			imgFileName: string
+			year: number
+			urls: string[]
 		}
 	}
 }

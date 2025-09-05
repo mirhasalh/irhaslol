@@ -111,7 +111,12 @@ const posts = publicEnv.posts,
   postsQuery = publicEnv.postsQuery,
   aPost = publicEnv.post,
   tagged = publicEnv.tagged,
-  taggedQuery = publicEnv.taggedQuery
+  taggedQuery = publicEnv.taggedQuery,
+  applications = publicEnv.apps,
+  mobileAppsQuery = publicEnv.appsQuery,
+  mobileApp = publicEnv.app,
+  works = publicEnv.works,
+  worksQuery = publicEnv.worksQuery
 
 export const getPosts = async (from: number, to: number) => {
   const res = await get(`${posts}${from}...${to}${postsQuery}`)
@@ -134,6 +139,22 @@ export const getTagged = async (tag: string, from = 0, to = 5): Promise<App.Post
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )
   return sorted
+}
+
+export const getMobileApps = async (from: number, to: number): Promise<App.MobileApp[]> => {
+  const res = await get(`${applications}${from}...${to}${mobileAppsQuery}`)
+  return res.result as App.MobileApp[]
+}
+
+export const getMobileApp = async (slug: string): Promise<App.MobileApp> => {
+  const param = `slug=%22${slug}%22&perspective=drafts`
+  const res = await get(`${mobileApp}${param}`)
+  return (res.result as App.MobileApp[])[0]
+}
+
+export const getWorks = async (from: number, to:number): Promise<App.Work[]> => {
+  const res = await get(`${works}${from}...${to}${worksQuery}`)
+  return res.result as App.Work[]
 }
 
 // A ugly workaround to remove unused `@html`
@@ -181,124 +202,6 @@ export const socials = [
     url: 'https://www.linkedin.com/in/irhasdev/'
   }
 ]
-
-export const recentWork = [
-  {
-    id: 0,
-    year: 2024,
-    imgUrl: `${website}/IMG_20250108-174556.webp`,
-    urls: ['https://play.google.com/store/apps/details?id=com.dafturn.mypertamina&hl=en'],
-    title: 'MyPertamina x UCOllect microsite UI/UX design (Associated with Senja Solutions)',
-    desc: 'Created the UCOllect microsite using Figma, ensuring a seamless design that integrates cohesively with the MyPertamina app to provide a unified user experience.'
-  },
-  {
-    id: 1,
-    year: 2024,
-    imgUrl: `${website}/IMG_20250108-174004.webp`,
-    urls: ['https://demo.photobook.ai/'],
-    title: 'Photobook AI demo website (Associated with Senja Solutions)',
-    desc: 'Designed and developed a demo website for a SaaS product using the Svelte 5 JavaScript framework. Delivered the project successfully within an ambitious 4-day deadline 💪.'
-  },
-  {
-    id: 2,
-    year: 2024,
-    imgUrl: `${website}/IMG_20250108-172909.webp`,
-    urls: ['https://gomining.com/tokenomics'],
-    title: 'GoMining landing page (Associated with Senja Solutions)',
-    desc: 'Served as a supporting Frontend Engineer, utilizing the Nuxt.js framework to build and optimize the landing page for the multinational company GoMining.'
-  },
-  {
-    id: 3,
-    year: 2023,
-    imgUrl: `${website}/IMG_20250108-173808.webp`,
-    urls: ['https://demo.photobook.ai/'],
-    title: 'AI-Powered photo book editor (Associated with Senja Solutions)',
-    desc: 'Worked as a Frontend Engineer at Photobook.ai in Singapore, specializing in building seamless user experiences with Svelte. Responsibilities included creating and maintaining frontend components, collaborating with cross-functional teams, and enhancing web applications.'
-  },
-  {
-    id: 4,
-    year: 2023,
-    imgUrl: `${website}/IMG_20230521-195115.webp`,
-    urls: ['https://apps.apple.com/id/app/ucollect-by-noovoleum/id6462969708', 'https://play.google.com/store/apps/details?id=com.noovoleum.ucollect&hl=en'],
-    title: 'UCOllect app by noovoleum (Associated with Senja Solutions)',
-    desc: 'As the pioneering engineer on the team, I initiated the design and executed the front-end development using the Flutter framework for iOS and Android, successfully achieving over 10,000 downloads and maintaining a 4-star rating.'
-  }
-]
-
-export const apps = [
-  {
-    id: 0,
-    year: '2025',
-    urls: [
-      {
-        id: 0,
-        title: 'Internal testing',
-        code: 'internal-testing',
-        url: '',
-        show: false
-      },
-      {
-        id: 1,
-        title: 'Android',
-        code: 'android',
-        url: 'https://play.google.com/store/apps/details?id=lol.irhas&pli=1',
-        show: true
-      },
-      {
-        id: 2,
-        title: 'iOS',
-        code: 'ios',
-        url: 'https://irhas.lol',
-        show: false
-      }
-    ],
-    production: true,
-    name: 'Create invoice',
-    icon: `${website}/IMG_20250212-231404.webp`,
-    featureGraphic: `${website}/IMG_20250213-134303.webp`,
-    shortDescription: 'Create an Invoice in Under 5 Seconds – Let’s Go!',
-    description: 'A minimalist tool for generating PDF invoices with dynamic colors, company logo attachment, and zero cost.',
-    privacy: {
-      effectiveDate: '12 February 2025',
-      declarations: [
-        {
-          id: 0,
-          title: 'Introduction',
-          subtitle: 'Thank you for using Create Invoice. Your privacy is important to us. This privacy policy explains how we handle your data.'
-        },
-        {
-          id: 1,
-          title: 'No data collection',
-          subtitle: 'Create Invoice does not collect, store, or transmit any personal or sensitive data. All invoices you create remain on your device and are not shared with us or any third party.'
-        },
-        {
-          id: 2,
-          title: 'No internet access',
-          subtitle: 'The app works entirely offline and does not require an internet connection. There are no online services, cloud storage, or remote servers involved.'
-        },
-        {
-          id: 3,
-          title: 'Permissions',
-          subtitle: 'Create Invoice may request access to your device’s storage solely to save and manage invoices. We do not access, share, or collect any data from your device.'
-        },
-        {
-          id: 4,
-          title: 'Changes to this Policy',
-          subtitle: 'We may update this privacy policy from time to time. Any changes will be reflected in this document.'
-        },
-        {
-          id: 5,
-          title: 'Contact',
-          subtitle: 'If you have any questions about this privacy policy, you can contact us at irhasm@icloud.com.'
-        }
-      ]
-    }
-  }
-]
-
-export const getApp = (slug = '') => {
-  return apps.find((v) => v.name.replace(' ', '-').toLowerCase() === slug)
-}
 
 export const techStacks = [
   { id: 0, title: 'Dart', },
