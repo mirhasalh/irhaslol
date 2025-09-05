@@ -64,7 +64,7 @@
           </li>
         {/each}
       </ul>
-      {#if mobileApp.production}
+      {#if !mobileApp.production}
         <p class="mt-2"><small>{note}</small></p>
       {/if}
     </div>
