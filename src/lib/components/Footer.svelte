@@ -1,8 +1,38 @@
 <script lang="ts">
   import { l } from '$lib/shared.svelte'
   import BrandLogo from './BrandLogo.svelte'
-  import { email, sites, socials } from '$lib'
+  import { email } from '$lib'
   import { app } from '$lib/shared.svelte'
+
+  const sites = [
+    {
+      name: 'Flutter web',
+      url: 'https://flutter.irhas.lol/'
+    },
+    {
+      name: 'Outter HTML formatter',
+      url: 'https://ohf.irhas.lol/'
+    }
+  ]
+
+  const socials = [
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/irhas03'
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/mirhasalh/irhaslol'
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/irhasdev/'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/irhasdev/'
+    }
+  ]
 
   const d = new Date()
 

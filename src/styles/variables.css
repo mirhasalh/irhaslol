@@ -2,10 +2,12 @@
     --bg-base-200: 248, 248, 248;
     --bg-base-300: 238, 238, 238;
     --neutral-content: 231, 227, 228;
+    --pattern-doodle: url("https://irhas.lol/pattern-doodle.png");
 }
 
 [data-theme="dark"] {
     --bg-base-200: 25, 30, 36;
     --bg-base-300: 21, 25, 30;
     --neutral-content: 231, 227, 228;
+    --pattern-doodle: url("https://irhas.lol/pattern-doodle-dark.png");
 }

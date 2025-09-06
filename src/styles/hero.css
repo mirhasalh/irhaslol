@@ -1,3 +1,5 @@
+@import url("variables.css");
+
 .hero-overlay-gradient-primary,
 .hero-overlay-gradient-secondary,
 .hero-overlay-gradient-tertiary {
@@ -26,7 +28,8 @@
 
 .hero-pattern-primary,
 .hero-pattern-secondary,
-.hero-pattern-neutral-content {
+.hero-pattern-neutral-content,
+.hero-pattern-doodle {
     grid-column-start: 1;
     grid-row-start: 1;
     height: 100%;
@@ -52,4 +55,10 @@
 
 .hero-pattern-neutral-content {
     background-image: url("https://irhas.lol/pattern-neutral-content.svg");
+}
+
+.hero-pattern-doodle {
+    background-image: var(--pattern-doodle);
+    background-size: 270px 480px;
+    opacity: 0.2;
 }

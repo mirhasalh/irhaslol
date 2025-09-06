@@ -12,5 +12,5 @@
       </p>
     </div>
   </div>
-  <div class="hero-pattern-primary"></div>
+  <div class="hero-pattern-neutral-content"></div>
 </div>

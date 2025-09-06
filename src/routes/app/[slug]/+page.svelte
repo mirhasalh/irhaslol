@@ -39,7 +39,7 @@
 
 <div class="hero min-h-screen">
   <div class="hero-overlay-gradient-primary reveal-blur animation-delay-500"></div>
-  <div class="hero-pattern-neutral-content"></div>
+  <div class="hero-pattern-doodle"></div>
   <div class="hero-content relative z-10 text-center">
     <div class="max-w-md">
       <img class="app-icon mx-auto mb-4" src={`${website}/${mobileApp.icon}`} alt={mobileApp.title} width="126" />
