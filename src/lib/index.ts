@@ -4,33 +4,6 @@ import { error } from '@sveltejs/kit'
 export const website = 'https://irhas.lol',
   email = 'irhasm@outlook.com'
 
-export const gitHubAccounts = [
-  {
-    id: 0,
-    username: 'b3nggo',
-    profile: 'https://github.com/b3nggo',
-    avatar: 'https://github.com/b3nggo.png'
-  },
-  {
-    id: 1,
-    username: 'mirhas',
-    profile: 'https://gitlab.com/mirhas',
-    avatar: 'https://gitlab.com/uploads/-/system/user/avatar/12060869/avatar.png'
-  },
-  {
-    id: 2,
-    username: 'irhasalh',
-    profile: 'https://github.com/irhasalh',
-    avatar: 'https://github.com/irhasalh.png'
-  },
-  {
-    id: 3,
-    username: 'mirhasalh',
-    profile: 'https://github.com/mirhasalh',
-    avatar: 'https://github.com/mirhasalh.png'
-  }
-]
-
 export const getEnvVar = (data: string) => {
   try {
     JSON.parse(data)
@@ -152,7 +125,7 @@ export const getMobileApp = async (slug: string): Promise<App.MobileApp> => {
   return (res.result as App.MobileApp[])[0]
 }
 
-export const getWorks = async (from: number, to:number): Promise<App.Work[]> => {
+export const getWorks = async (from: number, to: number): Promise<App.Work[]> => {
   const res = await get(`${works}${from}...${to}${worksQuery}`)
   return res.result as App.Work[]
 }
@@ -172,47 +145,3 @@ export const formatDate = (input: string): string => {
 export const formatSlug = (str: string) => {
   return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
 }
-
-export const sites = [
-  {
-    name: 'Flutter web',
-    url: 'https://flutter.irhas.lol/'
-  },
-  {
-    name: 'Outter HTML formatter',
-    url: 'https://ohf.irhas.lol/'
-  }
-]
-
-export const socials = [
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/irhas03'
-  },
-  {
-    name: 'GitHub',
-    url: 'https://github.com/mirhasalh/irhaslol'
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/irhasdev/'
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/irhasdev/'
-  }
-]
-
-export const techStacks = [
-  { id: 0, title: 'Dart', },
-  { id: 1, title: 'Flutter' },
-  { id: 2, title: 'Figma' },
-  { id: 3, title: 'Svelte' },
-  { id: 4, title: 'Nuxt' },
-  { id: 5, title: 'Go' },
-  { id: 6, title: 'Next' },
-  { id: 7, title: 'Swift' },
-  { id: 8, title: 'Java' },
-  { id: 9, title: 'Spring' },
-  { id: 10, title: 'Rive' }
-]

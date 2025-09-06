@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
-  import { website, techStacks } from '$lib'
+  import { website } from '$lib'
   import { l } from '$lib/shared.svelte'
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
@@ -19,12 +19,26 @@
   import Rive from '$icons/tech/Rive.svelte'
   import Marquee from '$components/Marquee.svelte'
 
+  const techStacks = [
+    { id: 0, title: 'Dart' },
+    { id: 1, title: 'Flutter' },
+    { id: 2, title: 'Figma' },
+    { id: 3, title: 'Svelte' },
+    { id: 4, title: 'Nuxt' },
+    { id: 5, title: 'Go' },
+    { id: 6, title: 'Next' },
+    { id: 7, title: 'Swift' },
+    { id: 8, title: 'Java' },
+    { id: 9, title: 'Spring' },
+    { id: 10, title: 'Rive' }
+  ]
+
   let { data }: { data: LayoutData } = $props()
 
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[],
     mobileApps: App.MobileApp[] = obj.apps as App.MobileApp[]
-  
+
   console.log(mobileApps)
 </script>
 

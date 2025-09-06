@@ -1,15 +1,41 @@
 <script lang="ts">
   import type { PageData } from './$types'
-  import { website, gitHubAccounts } from '$lib'
+  import { website } from '$lib'
   import { l } from '$lib/shared.svelte'
   import Tick from '$icons/Tick.svelte'
   import Card3D from '$components/Card3D.svelte'
 
-  let { data }: { data: PageData } = $props()
+  const gitHubAccounts = [
+    {
+      id: 0,
+      username: 'b3nggo',
+      profile: 'https://github.com/b3nggo',
+      avatar: 'https://github.com/b3nggo.png'
+    },
+    {
+      id: 1,
+      username: 'mirhas',
+      profile: 'https://gitlab.com/mirhas',
+      avatar: 'https://gitlab.com/uploads/-/system/user/avatar/12060869/avatar.png'
+    },
+    {
+      id: 2,
+      username: 'irhasalh',
+      profile: 'https://github.com/irhasalh',
+      avatar: 'https://github.com/irhasalh.png'
+    },
+    {
+      id: 3,
+      username: 'mirhasalh',
+      profile: 'https://github.com/mirhasalh',
+      avatar: 'https://github.com/mirhasalh.png'
+    }
+  ]
+
+  let { data }: { data: PageData } = $props(),
+    showImage = $state(false)
 
   const works = data.works.reverse()
-
-  let showImage = $state(false)
 </script>
 
 <svelte:head>
