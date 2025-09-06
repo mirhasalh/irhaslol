@@ -38,8 +38,11 @@
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[],
     mobileApps: App.MobileApp[] = obj.apps as App.MobileApp[]
+<<<<<<< HEAD
 
   console.log(mobileApps)
+=======
+>>>>>>> 3f8b22b (fix(page): remove console log)
 </script>
 
 <MetaHome />
