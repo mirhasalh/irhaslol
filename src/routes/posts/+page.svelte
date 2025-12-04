@@ -1,7 +1,5 @@
 <script lang="ts">
   import { l } from '$lib/shared.svelte'
-  import { fade, fly } from 'svelte/transition'
-  import { flip } from 'svelte/animate'
   import type { PageData } from './$types'
   import PostCard from '$components/PostCard.svelte'
 
@@ -34,7 +32,7 @@
   </form>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
     {#each postsToShow as post (post.slug)}
-      <li animate:flip in:fade out:fly={{ x: 100 }}>
+      <li>
         <PostCard {post} />
       </li>
     {/each}
