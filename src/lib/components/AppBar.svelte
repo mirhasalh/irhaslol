@@ -19,7 +19,7 @@
       <div tabindex="-1" role="button" class="btn btn-ghost lg:hidden">
         <Menu />
       </div>
-      <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+      <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
         {#each urls as u (u)}
           {@const active = u.url === '/' ? false : u.url === page.route.id}
           {@const link = active ? 'link link-primary' : 'link link-hover'}
