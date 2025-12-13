@@ -78,15 +78,10 @@
     </fieldset>
   </form>
   <nav>
-    <h3 class="footer-title opacity-0">{l('themes')}</h3>
+    <h3 class="footer-title">{l('themes')}</h3>
     {@render trailing?.()}
   </nav>
 </footer>
-{#if app.theme == 'dark'}
-  <hr class="border-neutral" />
-{:else}
-  <hr class="border-neutral-content" />
-{/if}
 <footer class="footer bg-base-300 text-base-content px-10 py-4">
   <aside>
     <a href="/" title="Home">

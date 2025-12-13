@@ -7,15 +7,14 @@
   let { onAuto, onDark, onLight }: { onAuto: (event: Event) => void; onDark: (event: Event) => void; onLight: (event: Event) => void } = $props()
 </script>
 
-<div>
-  <span>{app.theme}</span>
-  <button class="btn btn-sm sm:btn-xs" class:btn-neutral={app.theme === 'dark'} onclick={onDark}>
+<div class="border-base-content/5 rounded-md border p-1">
+  <button class={`${app.theme == 'dark' ? 'btn' : 'btn btn-ghost'} btn-sm sm:btn-xs`} onclick={onDark}>
     <Dark class="h-4 w-4 fill-current" />
   </button>
-  <button class="btn btn-sm sm:btn-xs" class:btn-neutral={app.theme === 'light'} onclick={onLight}>
+  <button class={`${app.theme == 'light' ? 'btn' : 'btn btn-ghost'} btn-sm sm:btn-xs`} onclick={onLight}>
     <Light class="h-4 w-4 fill-current" />
   </button>
-  <button class="btn btn-sm sm:btn-xs" onclick={onAuto}>
+  <button class={`${app.theme == 'auto' ? 'btn' : 'btn btn-ghost'} btn-sm sm:btn-xs`} onclick={onAuto}>
     <Contrast class="h-4 w-4 fill-current" />
   </button>
 </div>

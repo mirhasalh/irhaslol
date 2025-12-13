@@ -21,8 +21,7 @@
     pageState = new HomePageState()
 
   const onLightSwitch = (theme: string) => {
-    const to = theme == 'auto' ? '' : theme
-    pageState.setTheme(to)
+    pageState.setTheme(theme)
     localStorage.setItem('theme', app.theme)
   }
 
@@ -37,7 +36,10 @@
     })
   })
 
-  onMount(() => pageState.setBodyBackgroundColor())
+  onMount(() => {
+    pageState.setBodyBackgroundColor()
+    pageState.initTheme()
+  })
 </script>
 
 <svelte:head>
