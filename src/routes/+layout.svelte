@@ -54,11 +54,14 @@
     </a>
   {/snippet}
   {#snippet trailing()}
-    <select class="select w-18 uppercase" bind:value={app.locale}>
-      {#each Object.keys(t9n) as lang}
-        <option value={lang}>{lang}</option>
-      {/each}
-    </select>
+    <form>
+      <label for="language-settings" class="hidden">Language settings</label>
+      <select id="language-settings" name="language-settings" class="select w-18 uppercase" aria-label="Language settings" bind:value={app.locale}>
+        {#each Object.keys(t9n) as lang}
+          <option value={lang}>{lang}</option>
+        {/each}
+      </select>
+    </form>
     <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
