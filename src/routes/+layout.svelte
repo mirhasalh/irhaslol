@@ -18,11 +18,10 @@
   }
 
   let { children } = $props(),
-    pageState = new HomePageState(),
-    to = $derived(app.theme === 'light' ? 'dark' : 'light')
+    pageState = new HomePageState()
 
-  const onChanged = () => {
-    pageState.setTheme(to)
+  const onLightSwitch = (theme: string) => {
+    pageState.setTheme(theme)
     localStorage.setItem('theme', app.theme)
   }
 
@@ -37,7 +36,10 @@
     })
   })
 
-  onMount(() => pageState.setBodyBackgroundColor())
+  onMount(() => {
+    pageState.setBodyBackgroundColor()
+    pageState.initTheme()
+  })
 </script>
 
 <svelte:head>
@@ -57,7 +59,6 @@
         <option value={lang}>{lang}</option>
       {/each}
     </select>
-    <LightSwitch isDark={app.theme === 'dark'} {onChanged} />
     <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
@@ -70,4 +71,8 @@
   {/snippet}
 </AppBar>
 {@render children()}
-<Footer />
+<Footer>
+  {#snippet trailing()}
+    <LightSwitch onAuto={() => onLightSwitch('auto')} onDark={() => onLightSwitch('dark')} onLight={() => onLightSwitch('light')} />
+  {/snippet}
+</Footer>
