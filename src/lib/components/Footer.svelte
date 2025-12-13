@@ -36,7 +36,8 @@
 
   const d = new Date()
 
-  let year = $state(d.getFullYear()),
+  let { trailing } = $props(),
+    year = $state(d.getFullYear()),
     emailBody = $state('')
 
   const sendEmail = (event: Event) => {
@@ -47,7 +48,7 @@
   }
 </script>
 
-<footer class="footer sm:footer-horizontal bg-base-300 text-base-content mt-10 p-10">
+<footer class="footer lg:footer-horizontal bg-base-300 text-base-content mt-10 p-10">
   <nav>
     <h3 class="footer-title">{l('sites')}</h3>
     {#each sites as site (site.url)}
@@ -76,6 +77,10 @@
       </div>
     </fieldset>
   </form>
+  <nav>
+    <h3 class="footer-title opacity-0">{l('themes')}</h3>
+    {@render trailing?.()}
+  </nav>
 </footer>
 {#if app.theme == 'dark'}
   <hr class="border-neutral" />

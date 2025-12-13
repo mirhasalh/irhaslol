@@ -18,10 +18,10 @@
   }
 
   let { children } = $props(),
-    pageState = new HomePageState(),
-    to = $derived(app.theme === 'light' ? 'dark' : 'light')
+    pageState = new HomePageState()
 
-  const onChanged = () => {
+  const onLightSwitch = (theme: string) => {
+    const to = theme == 'auto' ? '' : theme
     pageState.setTheme(to)
     localStorage.setItem('theme', app.theme)
   }
@@ -57,7 +57,6 @@
         <option value={lang}>{lang}</option>
       {/each}
     </select>
-    <LightSwitch isDark={app.theme === 'dark'} {onChanged} />
     <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
@@ -70,4 +69,8 @@
   {/snippet}
 </AppBar>
 {@render children()}
-<Footer />
+<Footer>
+  {#snippet trailing()}
+    <LightSwitch onAuto={() => onLightSwitch('auto')} onDark={() => onLightSwitch('dark')} onLight={() => onLightSwitch('light')} />
+  {/snippet}
+</Footer>
