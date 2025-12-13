@@ -28,6 +28,7 @@ export default {
     showImage: 'Show image',
     sites: 'Sites',
     socials: 'Socials',
+    themes: 'Themes',
     viewAll: 'View all',
     visit: 'Visit',
     welcome: 'Welcome to my website.',
@@ -37,8 +38,8 @@ export default {
     animations: 'Animasi',
     apps: 'Aplikasi',
     bio: 'Seorang pria biasa dari Bandung, yang selalu bersemangat menantang dirinya sendiri dalam desain dan pengembangan front-end setiap hari.',
-    emailMe: 'Kirim pesan',
-    getInTouch: 'Hubungi kami',
+    emailMe: 'Email saya',
+    getInTouch: 'Hubungi saya',
     gitHubAccounts: 'Akun GitHub',
     gitHubAccountsSubtitle: 'Mudah-mudahan ini bisa bercerita banyak tentang perjalanan coding saya.',
     greetings: {
@@ -61,10 +62,11 @@ export default {
     send: 'Kirim',
     showImage: 'Tampilkan gambar',
     sites: 'Situs',
-    socials: 'Sosial',
+    socials: 'Media sosial',
+    themes: 'Tema',
     viewAll: 'Lihat semua',
     visit: 'Kunjungi',
-    welcome: 'Selamat datang di situs web ku.',
+    welcome: 'Selamat datang di situs webku.',
     workHistory: 'Riwayat pekerjaan'
   }
 }
