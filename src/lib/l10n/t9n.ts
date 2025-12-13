@@ -52,7 +52,7 @@ export default {
       home: 'Beranda',
       posts: 'Postingan'
     },
-    recentPost: 'Postingan terbaru',
+    recentPosts: 'Postingan terbaru',
     riveIntro: {
       end: 'Sempurna untuk menjaga kecepatan tanpa kehilangan kualitas.',
       mid: 'sangat ringan dan ukuran berkas tetap kecil.',
