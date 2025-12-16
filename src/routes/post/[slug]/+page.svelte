@@ -42,6 +42,10 @@
     pageState.setCodeStyle(parsedEl)
     pageState.setLinkStyle(parsedEl)
     pageState.setBlockquoteStyle(parsedEl)
+    pageState.setTableStyle(parsedEl)
+    pageState.setTableHeaderStyle(parsedEl)
+    pageState.setUnorderedListStyle(parsedEl)
+    pageState.setOrderedListStyle(parsedEl)
     headings = pageState.getHeadings(parsedEl)
   }
 
@@ -150,12 +154,12 @@
     </div>
     <div class="article-content mx-auto my-4 max-w-3xl px-4" bind:this={parsedEl}>
       <Sanitized html={data.code} />
-      <ul class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2">
         {#each data.post.tags as tag (tag)}
           {@const url = `/posts/tagged/${tag}`}
-          <li><a class="btn btn-sm btn-primary" href={url}>{`#${tag}`}</a></li>
+          <a class="btn btn-sm btn-primary" href={url}>{`#${tag}`}</a>
         {/each}
-      </ul>
+      </div>
     </div>
   </div>
 </article>

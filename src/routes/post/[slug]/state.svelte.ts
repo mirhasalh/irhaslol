@@ -57,6 +57,38 @@ export class PostPageState {
     })
   }
 
+  setTableStyle = (htmlElement: HTMLElement) => {
+    const tableStyle = ['table', 'table-zebra']
+
+    htmlElement.querySelectorAll('table').forEach((tableEl) => {
+      tableEl.classList.add(...tableStyle)
+    })
+  }
+
+  setTableHeaderStyle = (htmlElement: HTMLElement) => {
+    const tableHeadStyle = ['bg-base-300']
+
+    htmlElement.querySelectorAll('thead').forEach((tableHeadEl) => {
+      tableHeadEl.classList.add(...tableHeadStyle)
+    })
+  }
+
+  setUnorderedListStyle = (htmlElement: HTMLElement) => {
+    const ulStyle = ['list', 'list-disc', 'pl-6']
+
+    htmlElement.querySelectorAll('ul').forEach((ulEl) => {
+      ulEl.classList.add(...ulStyle)
+    })
+  }
+
+  setOrderedListStyle = (htmlElement: HTMLElement) => {
+    const olStyle = ['list', 'list-decimal', 'pl-6']
+
+    htmlElement.querySelectorAll('ol').forEach((ulEl) => {
+      ulEl.classList.add(...olStyle)
+    })
+  }
+
   onHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
