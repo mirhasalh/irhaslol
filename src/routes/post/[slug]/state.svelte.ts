@@ -58,7 +58,7 @@ export class PostPageState {
   }
 
   setTableStyle = (htmlElement: HTMLElement) => {
-    const tableStyle = ['table', 'table-zebra']
+    const tableStyle = ['table', 'table-zebra', 'bg-base-100']
 
     htmlElement.querySelectorAll('table').forEach((tableEl) => {
       tableEl.classList.add(...tableStyle)
