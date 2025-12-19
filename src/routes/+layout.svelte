@@ -6,11 +6,11 @@
   import { onNavigate } from '$app/navigation'
   import { HomePageState } from './state.svelte'
   import { app } from '$lib/shared.svelte'
-  import t9n from '$l10n/t9n'
   import Footer from '$components/Footer.svelte'
   import BrandLogo from '$components/BrandLogo.svelte'
   import AppBar from '$components/AppBar.svelte'
   import LightSwitch from '$components/LightSwitch.svelte'
+  import LanguageSettings from '$components/LanguageSettings.svelte'
 
   if (browser) {
     const currentTheme = document.documentElement.getAttribute('data-theme')
@@ -54,14 +54,7 @@
     </a>
   {/snippet}
   {#snippet trailing()}
-    <form>
-      <label for="language-settings" class="hidden">Language settings</label>
-      <select id="language-settings" name="language-settings" class="select w-18 uppercase" aria-label="Language settings" bind:value={app.locale}>
-        {#each Object.keys(t9n) as lang}
-          <option value={lang}>{lang}</option>
-        {/each}
-      </select>
-    </form>
+    <LanguageSettings />
     <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
