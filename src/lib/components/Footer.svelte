@@ -3,17 +3,6 @@
   import BrandLogo from './BrandLogo.svelte'
   import { email } from '$lib'
 
-  const sites = [
-    {
-      name: 'Flutter web',
-      url: 'https://flutter.irhas.lol/'
-    },
-    {
-      name: 'Outter HTML formatter',
-      url: 'https://ohf.irhas.lol/'
-    }
-  ]
-
   const socials = [
     {
       name: 'Facebook',
@@ -47,15 +36,7 @@
   }
 </script>
 
-<footer class="footer lg:footer-horizontal bg-base-300 text-base-content mt-10 p-10">
-  <nav>
-    <h3 class="footer-title">{l('sites')}</h3>
-    {#each sites as site (site.url)}
-      <a class="link link-hover roboto" href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-        {site.name}
-      </a>
-    {/each}
-  </nav>
+<footer class="footer md:footer-horizontal bg-base-300 text-base-content mt-10 p-10">
   <nav>
     <h3 class="footer-title">{l('socials')}</h3>
     {#each socials as social (social.url)}
