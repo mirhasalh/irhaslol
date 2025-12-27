@@ -53,7 +53,7 @@
         <br />
         {l('greetings.name')}
       </h1>
-      <p class="reveal-fade-fly-blur animation-delay-250 py-6 md:text-xl">
+      <p class="roboto reveal-fade-fly-blur animation-delay-250 py-6 md:text-xl">
         {l('welcome')}
       </p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
@@ -132,7 +132,7 @@
           <div class="card-body">
             <span class="jetbrains-mono text-base-content/50 uppercase"><strong>{app.year}</strong></span>
             <h2 class="merriweather card-title">{app.title}</h2>
-            <p><span>{app.description}</span></p>
+            <p class="roboto"><span>{app.description}</span></p>
           </div>
         </a>
       </li>

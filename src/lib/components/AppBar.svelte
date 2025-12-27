@@ -19,7 +19,7 @@
       <div tabindex="-1" role="button" class="btn btn-ghost lg:hidden">
         <Menu />
       </div>
-      <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+      <ul tabindex="-1" class="roboto menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
         {#each urls as u (u)}
           {@const active = u.url === '/' ? false : u.url === page.route.id}
           {@const link = active ? 'link link-primary' : 'link link-hover'}
@@ -30,7 +30,7 @@
     {@render leading?.()}
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+    <ul class="roboto menu menu-horizontal px-1">
       {#each urls as u (u)}
         {@const active = u.url === '/' ? false : u.url === page.route.id}
         {@const link = active ? 'link link-primary' : 'link link-hover'}

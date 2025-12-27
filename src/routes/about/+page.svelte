@@ -51,11 +51,11 @@
       <h1 id="greetings" class="merriweather text-5xl font-bold">
         {l('greetings2')}
       </h1>
-      <p class="py-6">{l('bio')}</p>
+      <p class="roboto py-6">{l('bio')}</p>
       <h2 id="github-accounts" class="merriweather text-4xl font-bold">
         {l('gitHubAccounts')}
       </h2>
-      <p class="py-4">{l('gitHubAccountsSubtitle')}</p>
+      <p class="roboto py-4">{l('gitHubAccountsSubtitle')}</p>
       <div class="avatar-group -space-x-6">
         {#each gitHubAccounts as acc (acc.id)}
           <div class="avatar">
@@ -94,10 +94,10 @@
           <time class="jetbrains-mono italic">{work.year}</time>
           <div class="merriweather text-lg font-black">{work.title}</div>
           <img class:hidden={!showImage} src={`${website}/${work.imgFileName}`} alt={work.title} />
-          <small>{work.description}</small>
+          <small class="roboto">{work.description}</small>
           <br />
           <a class="btn btn-sm mt-2" class:hidden={!showImage} href={work.urls[0]} target="_blank">
-            <span class="text-sm">{l('visit')}</span>
+            <span class="roboto text-sm">{l('visit')}</span>
           </a>
         </div>
         {#if i !== works.length - 1}
@@ -111,7 +111,7 @@
 <section class="hero">
   <div class="hero-content">
     <a class="btn btn-neutral" href="https://irhas.lol/Resume_20250124-081909.pdf" target="_parent">
-      <span>Resume</span>
+      <span class="roboto">Resume</span>
     </a>
   </div>
 </section>

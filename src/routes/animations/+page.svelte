@@ -23,14 +23,14 @@
       <h1 id="animations" class="merriweather text-5xl font-bold">
         {l('animations')}
       </h1>
-      <p class="hidden py-6 md:block">
+      <p class="roboto hidden py-6 md:block">
         {l('riveIntro.start')}
         <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
         — {l('riveIntro.mid')}
         <br />
         {l('riveIntro.end')}
       </p>
-      <p class="block py-6 text-sm md:hidden">
+      <p class="roboto block py-6 text-sm md:hidden">
         {l('riveIntro.start')}
         <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
         — {l('riveIntro.mid')}
@@ -42,7 +42,7 @@
             <div class="card bg-base-100 shadow-sm">
               <Rive fileName={avatar.file} {width} {height} />
               <div class="card-body">
-                <p>{avatar.fileSize} kb</p>
+                <p class="roboto">{avatar.fileSize} kb</p>
               </div>
             </div>
           </li>

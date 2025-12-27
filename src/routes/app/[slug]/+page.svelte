@@ -80,12 +80,12 @@
 </section>
 <section class="mx-auto mt-10 max-w-4xl">
   <h2 id="description" class="merriweather m-4 text-4xl font-bold">Description</h2>
-  <p class="px-4">{mobileApp.description}</p>
+  <p class="roboto px-4">{mobileApp.description}</p>
 </section>
 <section class="mx-auto mt-10 max-w-4xl">
   <h2 id="privacy" class="merriweather m-4 text-4xl font-bold">Privacy policy</h2>
-  <p class="px-4">Effective date: {formatDate(mobileApp.effectiveDateOfPrivacy)}</p>
-  <ol class="list-mb-4 list mt-4 px-4">
+  <p class="roboto px-4">Effective date: {formatDate(mobileApp.effectiveDateOfPrivacy)}</p>
+  <ol class="list-mb-4 list roboto mt-4 px-4">
     {#each mobileApp.privacyDeclarations as declaration, i}
       <li>
         <p>

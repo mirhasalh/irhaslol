@@ -7,7 +7,7 @@
   <div class="hero-content relative z-10 text-center">
     <div class="max-w-md">
       <h1 class="merriweather text-5xl font-bold">{page.status}</h1>
-      <p class="py-6">
+      <p class="roboto py-6">
         {`${page.error?.message[0]}${page.error?.message.substring(1).toLowerCase()}`}
       </p>
     </div>

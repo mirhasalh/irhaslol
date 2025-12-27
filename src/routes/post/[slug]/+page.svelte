@@ -80,7 +80,7 @@
 </svelte:head>
 
 <div class="bg-base-300 sticky top-0 z-20 hidden md:flex">
-  <div class="breadcrumbs mx-auto text-sm">
+  <div class="breadcrumbs roboto mx-auto text-sm">
     <ul>
       <li><a href="/" title="Home"><Home /></a></li>
       <li><a href="/posts">posts</a></li>
@@ -88,7 +88,7 @@
     </ul>
   </div>
 </div>
-<article class="article">
+<article class="article roboto">
   <div class="mx-auto max-w-3xl px-4 pt-4">
     <a class="btn btn-sm mb-4 md:hidden" href="/posts" title="Back to posts">
       <Back />

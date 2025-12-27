@@ -2,7 +2,6 @@
   import { l } from '$lib/shared.svelte'
   import BrandLogo from './BrandLogo.svelte'
   import { email } from '$lib'
-  import { app } from '$lib/shared.svelte'
 
   const sites = [
     {
@@ -52,7 +51,7 @@
   <nav>
     <h3 class="footer-title">{l('sites')}</h3>
     {#each sites as site (site.url)}
-      <a class="link link-hover" href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+      <a class="link link-hover roboto" href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {site.name}
       </a>
     {/each}
@@ -60,7 +59,7 @@
   <nav>
     <h3 class="footer-title">{l('socials')}</h3>
     {#each socials as social (social.url)}
-      <a class="link link-hover" href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+      <a class="link link-hover roboto" href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {social.name}
       </a>
     {/each}
@@ -72,7 +71,7 @@
       <div class="join">
         <input class="input input-bordered join-item" id="email-body" name="email-body" type="text" aria-label="Email body" placeholder="Jot something down" bind:value={emailBody} />
         <button type="submit" class="btn btn-primary join-item" disabled={emailBody.length < 5}>
-          <span>{l('send')}</span>
+          <span class="roboto">{l('send')}</span>
         </button>
       </div>
     </fieldset>
