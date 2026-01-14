@@ -8,9 +8,9 @@
   const gitHubAccounts = [
     {
       id: 0,
-      username: 'icydviz',
-      profile: 'https://github.com/icydviz',
-      avatar: 'https://github.com/icydviz.png'
+      username: 'irhsm',
+      profile: 'https://github.com/irhsm',
+      avatar: 'https://github.com/irhsm.png'
     },
     {
       id: 1,
