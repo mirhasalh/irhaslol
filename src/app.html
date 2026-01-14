@@ -17,6 +17,12 @@
 					document.documentElement.setAttribute('data-theme', 'light')
 				}
 			})();
+			(function () {
+				try {
+					const savedLang = localStorage.getItem('lang')
+					if (savedLang) document.documentElement.setAttribute('lang', savedLang)
+				} catch (e) { }
+			})();
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">

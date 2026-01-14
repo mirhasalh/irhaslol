@@ -37,6 +37,7 @@
   })
 
   onMount(() => {
+    pageState.initLang()
     pageState.setBodyBackgroundColor()
     pageState.initTheme()
   })

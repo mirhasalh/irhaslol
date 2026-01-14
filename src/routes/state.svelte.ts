@@ -1,6 +1,11 @@
 import { app } from '$lib/shared.svelte'
 
 export class HomePageState {
+  initLang = () => {
+    const lang = localStorage.getItem('lang') || 'en'
+    app.locale = lang
+  }
+
   initTheme = () => {
     const theme = localStorage.getItem('theme') || ''
     app.theme = theme
